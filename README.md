@@ -11,22 +11,22 @@
 
 ## Estructura de Carpetas
 
-src/app/
-├── components/
-│   ├── header/
-│   ├── search/
-│   ├── product-list/
-│   ├── product-item/
-│   ├── product-detail/
-│   ├── product-image/
-│   ├── product-description/
-│   └── product-actions/
-├── services/
-│   ├── product.service.ts
-│   └── cache.service.ts
-├── models/
-│   └── product.model.ts
-└── pages/
+    src/app/
+    ├── components/
+    │   ├── header/
+    │   ├── search/
+    │   ├── product-list/
+    │   ├── product-item/
+    │   ├── product-detail/
+    │   ├── product-image/
+    │   ├── product-description/
+    │   └── product-actions/
+    ├── services/
+    │   ├── product.service.ts
+    │   └── cache.service.ts
+    ├── models/
+    │   └── product.model.ts
+    └── pages/
     ├── home/
     └── detail/
 
