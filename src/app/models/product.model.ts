@@ -13,8 +13,7 @@ export interface Product {
   secondaryCmera?: string[];
   dimentions?: string;
   weight?: number;
-  colors: { code: string; name: string }[];
-  storage: { code: string; name: string }[];
+  colors: string[];
   options: ProductOptions;
 }
 
