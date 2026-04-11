@@ -1,8 +1,23 @@
-import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { inject, Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Product } from '../service/product';
+import { CartItem } from '../models/car-item.model';
+import { CartResponse } from '../models/car-response.model';
 
 @Injectable({
-  providedIn: 'root' // Hace que el servicio esté disponible en toda la app
+  providedIn: 'root'
 })
 export class ProductService {
-  constructor() { }
+  private http = inject(HttpClient);
+  private apiUrl = 'https://itx-frontend-test.onrender.com/api';
+  getProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.apiUrl}/products`);
+  }
+  getProductById(id: string): Observable<Product> {
+    return this.http.get<Product>(`${this.apiUrl}/products/${id}`);
+  }
+  addToCart(item: CartItem): Observable<CartResponse> {
+    return this.http.post<CartResponse>(`${this.apiUrl}/cart`, item);
+  }
 }
