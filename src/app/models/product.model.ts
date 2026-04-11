@@ -10,7 +10,7 @@ export interface Product {
   displayResolution?: string;
   battery?: string;
   primaryCamera?: string[];
-  secondaryCmera?: string[];
+  secondaryCmera?: string[] | string;
   dimentions?: string;
   weight?: number;
   colors: string[];

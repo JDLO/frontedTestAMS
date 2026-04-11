@@ -1,5 +1,5 @@
 export interface CartItem {
-  productId: string;
-  colorCode: string;
-  storageCode: string;
+  id: string;
+  colorCode: number;
+  storageCode: number;
 }
