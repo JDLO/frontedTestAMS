@@ -3,15 +3,27 @@ export interface Product {
   brand: string;
   model: string;
   price: number;
-  image: string;
+  imgUrl: string;
   cpu?: string;
   ram?: string;
   os?: string;
-  screenResolution?: string;
+  displayResolution?: string;
   battery?: string;
-  cameras?: string;
-  dimensions?: string;
+  primaryCamera?: string[];
+  secondaryCmera?: string[];
+  dimentions?: string;
   weight?: number;
   colors: { code: string; name: string }[];
   storage: { code: string; name: string }[];
+  options: ProductOptions;
+}
+
+export interface ProductOptions {
+  colors: Productption[];
+  storages: Productption[];
+}
+
+export interface Productption {
+  code: number;
+  name: string;
 }
