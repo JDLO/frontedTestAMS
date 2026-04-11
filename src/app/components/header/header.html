@@ -1,0 +1,19 @@
+<header class="flex justify-between items-center p-4 bg-white border-b shadow-sm">
+  <!-- Logo / Título - Enlace a Home -->
+  <a routerLink="/" class="text-xl font-bold text-blue-600 hover:text-blue-700">
+    MobileShop
+  </a>
+  <!-- Breadcrumb -->
+  <nav class="text-sm text-gray-600">
+    <a routerLink="/" routerLinkActive="text-blue-600" [routerLinkActiveOptions]="{exact: true}" class="hover:text-blue-600">
+      Inicio
+    </a>
+    <span class="mx-2">/</span>
+    <span class="text-gray-800">Productos</span>
+  </nav>
+  <!-- Cart Counter -->
+  <div class="flex items-center gap-2 px-3 py-1 bg-gray-100 rounded-full">
+    <span class="text-lg">🛒</span>
+    <span class="font-semibold">{{ cartCount() }}</span>
+  </div>
+</header>
