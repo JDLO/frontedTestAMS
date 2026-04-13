@@ -1,0 +1,25 @@
+<header class="flex flex-wrap justify-between items-center p-4 bg-white border-b shadow-sm">
+  <!-- Logo / Título - Enlace a Home -->
+  <a routerLink="/" class="text-xl font-bold text-blue-600 hover:text-blue-700 order-1 sm:order-1">
+    MobileShop
+  </a>
+  <!-- Breadcrumb -->
+  <nav class="text-sm text-gray-600 w-full order-3 mt-2 text-center sm:w-auto sm:order-2 sm:mt-0 sm:text-left">
+    <a routerLink="/" class="hover:text-blue-600 hover:underline">
+      Inicio
+    </a>
+    <span class="mx-2">/</span>
+    @if (currentUrl().includes('/product/')) {
+      <a routerLink="/" class="hover:text-blue-600 hover:underline">Productos</a>
+      <span class="mx-2">/</span>
+      <span class="text-gray-800">Detalle</span>
+    } @else {
+      <span class="text-gray-800">Productos</span>
+    }
+  </nav>
+  <!-- Cart Counter -->
+  <div class="flex items-center gap-2 px-3 py-1 bg-gray-100 rounded-full order-2">
+    <span class="text-lg">🛒</span>
+    <span class="font-semibold">{{ cartCount() }}</span>
+  </div>
+</header>

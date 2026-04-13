@@ -1,0 +1,10 @@
+{
+  "/api": {
+    "target": "https://itx-frontend-test.onrender.com/api",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}
