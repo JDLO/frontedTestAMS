@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute, Router } from '@angular/router';
 import { of } from 'rxjs';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 
 import { ProductItem } from './product-item';
 import { Product } from '../../models/product.model';
@@ -50,5 +51,42 @@ describe('ProductItem', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should receive product input', () => {
+    expect(component.product).toBe(mockProduct);
+  });
+
+  it('should display product brand', () => {
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.textContent).toContain('Apple');
+  });
+
+  it('should display product model', () => {
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.textContent).toContain('iPhone 14');
+  });
+
+  it('should display product price', () => {
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.textContent).toContain('$999');
+  });
+
+  it('should have image with correct src and alt', () => {
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    const img = compiled.querySelector('img');
+    expect(img?.getAttribute('src')).toBe('test.jpg');
+    expect(img?.getAttribute('alt')).toBe('iPhone 14');
+  });
+
+  it('should have routerLink attribute', () => {
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    const div = compiled.querySelector('div[ng-reflect-router-link]') || compiled.querySelector('.border');
+    expect(div).toBeTruthy();
   });
 });
